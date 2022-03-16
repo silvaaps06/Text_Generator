@@ -18,7 +18,6 @@
                     <br>    
                     <p>What size would you like the song to have? <i>We advise 1200 characters for a full song</i></p>
                     <input type="text" name="size" id="size">
-                    <!-- <a class="main-button-slider" type="submit" value="Run Model">Rap it out!</a> -->
 
         </div>
     </div>
@@ -32,7 +31,6 @@
                     <button class="main-button-slider" type="submit" name="clicked_btn1" value="50cent">50cent</button>
                     <button class="main-button-slider" type="submit" name="clicked_btn1" value="Kanye West">Kanye West</button>
                 </form>
-
     </div>
 </section>
 <br>
@@ -47,6 +45,21 @@
             <div class="card-body">
                 <h6 class="card-title">Check your tune fresh out of the AI oven:</h6>
                 <p class="card-text"><pre>{{result}}</pre></p>
+
+                <a href="{{url_for('sound')}}">sound</a>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script type=text/javascript>
+                        $(function() {
+                        $('a#sound').on('click', function(e) {
+                            e.preventDefault()
+                            $.getJSON('/sound',
+                                function(data) {
+                            //do nothing
+                            });
+                            return false;
+                        });
+                        });
+                </script>
             </div>
         </div>
     </div>

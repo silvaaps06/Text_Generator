@@ -18,7 +18,6 @@
                     <br>    
                     <p>What size would you like the poem to have? <i>We advise 750 characters for a full poem</i></p>
                     <input type="text" name="size" id="size">
-                    <!-- <a class="main-button-slider" type="submit" value="Run Model">Rap it out!</a> -->
 
         </div>
     </div>
@@ -28,13 +27,11 @@
 <section class="section padding-top-70 padding-bottom-0" id="features">
     <div class="button_container" style="margin-top:40px">
 
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Emily Dickinson">Emily Dickinson</button>
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Maya Angelou">Maya Angelou</button>
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Oscar Wilde">Oscar Wilde</button>
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Shakespeare">Shakespeare</button>
-
+                    <button class="main-button-slider" type="submit" name="clicked_btn2" value="Emily Dickinson">Emily Dickinson</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn2" value="Maya Angelou">Maya Angelou</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn2" value="Oscar Wilde">Oscar Wilde</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn2" value="Shakespeare">Shakespeare</button>
                 </form>
-
     </div>
 </section>
 <br>
@@ -49,6 +46,21 @@
             <div class="card-body">
                 <h6 class="card-title">Check your poem fresh out of the AI oven:</h6>
                 <p class="card-text"><pre>{{result}}</pre></p>
+                
+                <a href="{{url_for('sound')}}">sound</a>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script type=text/javascript>
+                        $(function() {
+                        $('a#sound').on('click', function(e) {
+                            e.preventDefault()
+                            $.getJSON('/sound',
+                                function(data) {
+                            //do nothing
+                            });
+                            return false;
+                        });
+                        });
+                </script>            
             </div>
         </div>
     </div>

@@ -80,15 +80,22 @@ def define_which_sound(user_choice):
     sound_path = random.choice(os.listdir("/Users/AnaPSilva/Documents/Ana/Ironhack/Bootcamp/Final_Project/HTML/Sound/rap"))
     return "HTML/Sound/rap/" + sound_path
   elif user_choice== 'poems':
-    sound_path = random.choice(os.listdir("../Sound/poems/"))
-    return sound_path
+    sound_path = random.choice(os.listdir("/Users/AnaPSilva/Documents/Ana/Ironhack/Bootcamp/Final_Project/HTML/Sound/poems"))
+    return "HTML/Sound/poems/" + sound_path
   else:
-    sound_path = random.choice(os.listdir("../Sound/politic-speech/"))
-    return sound_path
+    sound_path = random.choice(os.listdir("/Users/AnaPSilva/Documents/Ana/Ironhack/Bootcamp/Final_Project/HTML/Sound/politic-speech"))
+    return "HTML/Sound/politic-speech/"+ sound_path
 
 def multiple_cool(user_choice,button_choice,x):
     """multiple actions at the same time
     background sound and speech to text """
     p1 = multiprocessing.Process(target=playsound, args=([define_which_sound(user_choice)]))
     p2 = multiprocessing.Process(target=voice_definer, args=([button_choice,x]))
-    return p1.start(),p2.start(), x
+    p1.start()
+    p2.start()
+    
+    p2.join()
+    if p2.is_alive():
+        print(p2.is_alive())
+    else:
+        p1.terminate()

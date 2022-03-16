@@ -7,7 +7,7 @@
         <div class="inputs" >
             <h1><strong>Drop it like Obama!</strong></h1>
             <br>
-            <h5>Try creating your own politic - inspirational maybe - with our AI's help.<br>All you need is to give it the first word you want, the size of your song and choose a speaker's style.</h5>
+            <h5>Try creating your own politic - inspirational maybe - speech with our AI's help.<br>All you need is to give it the first word you want, the size of your song and choose a speaker's style.</h5>
             <br>
             <br>    
                 <form method="POST">
@@ -28,8 +28,8 @@
 <section class="section padding-top-70 padding-bottom-0" id="features">
     <div class="button_container" style="margin-top:40px">
 
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Obama">Barack Obama</button>
-                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Trump">Donald Trump</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn3" value="Obama">Barack Obama</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn3" value="Trump">Donald Trump</button>
 
                 </form>
 
@@ -47,6 +47,21 @@
             <div class="card-body">
                 <h6 class="card-title">Check your speech fresh out of the AI oven:</h6>
                 <p class="card-text"><pre>{{result}}</pre></p>
+            
+                <a href="{{url_for('sound')}}">sound</a>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script type=text/javascript>
+                        $(function() {
+                        $('a#sound').on('click', function(e) {
+                            e.preventDefault()
+                            $.getJSON('/sound',
+                                function(data) {
+                            //do nothing
+                            });
+                            return false;
+                        });
+                        });
+                </script>             
             </div>
         </div>
     </div>
