@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Fake it - Poems{% endblock %}
+
+{% block content %}
+<section class="welcome-area-within" id="welcome">
+    <br>
+        <div class="inputs" >
+            <h1><strong>Sound Enlightened!</strong></h1>
+            <br>
+            <h5>Try creating your own poem with our AI's help.<br>All you need is to give it the first word you want, the size of your song and choose an poet's style.</h5>
+            <br>
+            <br>    
+                <form method="POST">
+                    <p>How would you like to start your poem? <i>Type in the title</i></p>
+                    <input type="text" name="seed" id="seed">            
+                    <br>
+                    <br>
+                    <br>    
+                    <p>What size would you like the poem to have? <i>We advise 750 characters for a full poem</i></p>
+                    <input type="text" name="size" id="size">
+                    <!-- <a class="main-button-slider" type="submit" value="Run Model">Rap it out!</a> -->
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section padding-top-70 padding-bottom-0" id="features">
+    <div class="button_container" style="margin-top:40px">
+
+                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Emily Dickinson">Emily Dickinson</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Maya Angelou">Maya Angelou</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Oscar Wilde">Oscar Wilde</button>
+                    <button class="main-button-slider" type="submit" name="clicked_btn1" value="Shakespeare">Shakespeare</button>
+
+                </form>
+
+    </div>
+</section>
+<br>
+<br>
+<div class="card mb-3" >
+    <div class="row g-0">
+        <div class="col-md-4">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_zrqthn6o.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay class="img-fluid rounded-start"></lottie-player>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h6 class="card-title">Check your poem fresh out of the AI oven:</h6>
+                <p class="card-text"><pre>{{result}}</pre></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
