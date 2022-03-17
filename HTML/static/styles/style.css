@@ -63,7 +63,9 @@ header - RAP
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 .inputs {
@@ -246,7 +248,8 @@ Card Results
 .card {
   cursor: pointer;
   display: block;
-  background: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+  background: #ffffff;
+  /* linear-gradient(127deg, #a759d1 30%, #8261ee 91%); */
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
@@ -266,6 +269,11 @@ Card Results
 
 .mb-3{
   margin-bottom:30rem
+}
+
+.col-md-8 {
+  background: #ffffff;
+
 }
 
 /* 
@@ -314,7 +322,7 @@ features
 .features-small-item .features-title {
   font-weight: 500;
   font-size: 18px;
-  color: #1e1e1e;
+  color: #0e0d0d;
   letter-spacing: 0.7px;
   margin-bottom: 15px;
   position: relative;
@@ -444,53 +452,21 @@ footer {
   position:relative;
   left:0px;
   bottom:0px;
-  height:250px;
+  height:50;
   width:100%;
-  padding-top: 30px;
+  padding-top: 0px;
   clear: both;
   background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
   margin-bottom: 0px;
-}
-
-
-footer .social {
-  overflow: hidden;
-  margin-top: 50px;
-  text-align: center;
-}
-
-footer .social li {
-  margin: 0px 10px;
-  display: inline-block;
-}
-
-footer .social li a {
-  color: #9d5bd9;
-  text-align: center;
-  background-color: #fff;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 50%;
-  display: inline-block;
-  font-size: 16px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-footer .social li a:hover {
-  background-color: #ff589e;
-  color: #fff;
+  flex-direction: row 
 }
 
 footer .copyright {
   text-align: center;
   border-top: 1px solid rgba(250,250,250,0.2);
   margin-top: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-weight: 400;
   font-size: 12px;
   color: #fff;

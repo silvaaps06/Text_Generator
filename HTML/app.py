@@ -70,8 +70,6 @@ def politic():
 
 @app.route("/sound")
 def sound():
-    """multiple actions at the same time
-    background sound and speech to text """
     multiple_cool(user_choice, button_choice, x)
     return (''), 204
 
